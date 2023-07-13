@@ -2,6 +2,13 @@
 
 Welcome to our repository! This project presents a monotonicity-based method (M*-extension) for sharpening the computation of function enclosures over variable domains. The method is designed to optimize even non-monotonic functions and has been implemented as an existence test (M*-test) within the well-established IbexSolve constraint solver. In this repository, we provide all the necessary code and instructions for you to understand, install, and use the existence test feature in your own work.
 
+## Downloading the Repository
+Run the following command to clone the repository:
+```
+git clone https://github.com/rilianx/ibex_revmono.git
+```
+Once the repository is downloaded, you can proceed with the compilation and installation steps mentioned below.
+
 ## Compiling and Installing
 
 Before you begin, please ensure you have `cmake` installed on your system. If not, you can install it by running `sudo apt-get install cmake`.
@@ -25,6 +32,8 @@ benchs/solver/deriv_systems/Brent-8.bch.der -t 15000 --test_type="M-test"
 ```
 
 This command loads a problem system from the specified files and applies the M-test existence test with a timeout of 15000 seconds. The output of this command will give you the results of solving the instance considering the `M-test` as the existence test for discarding boxes.
+
+Test instances can be found at [this folder](https://github.com/rilianx/ibex_revmono/tree/main/benchs/solver/deriv_systems).
 
 ## Options for --test_type
 
@@ -52,8 +61,8 @@ bin/ibexsolve --help
 
 The monotonicity-based tests are implemented in the following files:
 
-- src/contractor/ibex_CtcExistenceTest.h: This header file declares the `CtcExistenceTest` class, which implements the existence tests.
-- src/contractor/ibex_CtcExistenceTest.cpp: This source file defines the `CtcExistenceTest` class methods.
+- [src/contractor/ibex_CtcExistenceTest.h](https://github.com/rilianx/ibex_revmono/blob/main/src/contractor/ibex_CtcExistenceTest.h): This header file declares the `CtcExistenceTest` class, which implements the existence tests.
+- [src/contractor/ibex_CtcExistenceTest.cpp](https://github.com/rilianx/ibex_revmono/blob/main/src/contractor/ibex_CtcExistenceTest.cpp): This source file defines the `CtcExistenceTest` class methods.
 
 You can find these files in the `src/contractor/` directory. We invite you to explore these files to understand the underlying logic of the existence tests.
 
