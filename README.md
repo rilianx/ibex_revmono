@@ -15,7 +15,7 @@ make ibexsolve
 
 These commands build the executable `ibexsolve` in the `bin/` directory.
 
-## (3) Example of Use
+## Example of Use
 
 Here is an example of how to run the `ibexsolve` executable with the `M-test` existence test:
 
@@ -26,7 +26,7 @@ benchs/solver/deriv_systems/Brent-8.bch.der -t 15000 --test_type="M-test"
 
 This command loads a problem system from the specified files and applies the M-test existence test with a timeout of 15000 seconds. The output of this command will give you the results of solving the instance considering the `M-test` as the existence test for discarding boxes.
 
-## (4) Options for --test_type
+## Options for --test_type
 
 The `--test_type` option allows you to specify the type of existence test to apply. We currently support four types of existence tests:
 
