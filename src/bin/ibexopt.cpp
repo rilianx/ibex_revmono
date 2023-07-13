@@ -60,8 +60,11 @@ int main(int argc, char** argv) {
 	args::Flag format(parser, "format", "Give a description of the COV format used by IbexOpt", {"format"});
 	args::ValueFlag<string> no_split_arg(parser, "vars","Prevent some variables to be bisected, separated by '+'.\nExample: --no-split=x+y",{"no-split"});
 	args::Flag quiet(parser, "quiet", "Print no report on the standard output.",{'q',"quiet"});
+	args::ValueFlag<string> _f(parser, "string", _rel_eps_f.str(), {'f', "func"});
+	args::ValueFlag<string> _x(parser, "string", _rel_eps_f.str(), {'x', "func"});
+ 
 
-	args::Positional<std::string> filename(parser, "filename", "The name of the MINIBEX file.");
+	args::Positional<std::string> _filename(parser, "filename", "The name of the MINIBEX file.");
 
 	try
 	{
@@ -95,23 +98,39 @@ int main(int argc, char** argv) {
 		exit(0);
 	}
 
-	if (filename.Get()=="") {
+	if (_filename.Get()=="" and _f.Get()=="") {
 		ibex_error("no input file (try ibexopt --help)");
 		exit(1);
 	}
+ 
+  string filename = _filename.Get();
 
 	try {
+ 
+    
+ 
+    if(_f.Get()!=""){
+        filename = "tmp.txt";
+        ofstream myfile;
+        myfile.open (filename);
+        myfile << "variables\n";
+        myfile << _x.Get() << "\n";
+        myfile << "minimize\n";
+        myfile << _f.Get() << "\n";
+        myfile.close();
+        
+    }
 
 		System *sys;
 
-		string extension = filename.Get().substr(filename.Get().find_last_of('.')+1);
+		string extension = filename.substr(filename.find_last_of('.')+1);
 		if (extension == "nl") {
 			cerr << "\n\033[31mAMPL files can only be read with optimizer04 (ibex-opt-extra package).\n\n";
 			exit(0);
 		}
 		else
 			// Load a system of equations
-			sys = new System(filename.Get().c_str(), simpl_level? simpl_level.Get() : ExprNode::default_simpl_level);
+			sys = new System(filename.c_str(), simpl_level? simpl_level.Get() : ExprNode::default_simpl_level);
 
 		DefaultOptimizerConfig config(*sys);
 
@@ -125,7 +144,7 @@ int main(int argc, char** argv) {
 
 		if (!quiet) {
 			cout << endl << "************************ setup ************************" << endl;
-			cout << "  file loaded:\t\t" << filename.Get() << endl;
+			cout << "  file loaded:\t\t" << filename << endl;
 		}
 
 		if (rel_eps_f) {
@@ -219,9 +238,9 @@ int main(int argc, char** argv) {
 			output_cov_file = output_file.Get();
 		} else {
 			// got from stackoverflow.com:
-			string::size_type const p(filename.Get().find_last_of('.'));
+			string::size_type const p(filename.find_last_of('.'));
 			// filename without extension
-			string filename_no_ext=filename.Get().substr(0, p);
+			string filename_no_ext=filename.substr(0, p);
 			stringstream ss;
 			ss << filename_no_ext << ".cov";
 			output_cov_file=ss.str();
@@ -322,7 +341,7 @@ int main(int argc, char** argv) {
 
 	}
 	catch(ibex::UnknownFileException& e) {
-		cerr << "Error: cannot read file '" << filename.Get() << "'" << endl;
+		cerr << "Error: cannot read file '" << filename << "'" << endl;
 	}
 	catch(ibex::SyntaxError& e) {
 		cout << e << endl;

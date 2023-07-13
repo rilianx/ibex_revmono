@@ -8,6 +8,7 @@ set (IBEX_DESCRIPTION "A C++ library for interval-based algorithm design")
 set (IBEX_URL "http://www.ibex-lib.org/")
 set (IBEX_NAMESPACE "Ibex") # TODO use it everywhere
 set (IBEX_CMAKE_PATH_FILES_PREFIX ibex-path-hints)
+set(CMAKE_CXX_STANDARD 17)
 
 ################################################################################
 # Add cmake.utils to the list of CMAKE_MODULE_PATH

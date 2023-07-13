@@ -5,10 +5,10 @@
 //                                 IbexSolve
 //                               ************
 //
-// Author      : Gilles Chabert
+// Author      : Gilles Chabert, Ignacio Araya
 // Copyright   : IMT Atlantique (France)
 // License     : See the LICENSE file
-// Last Update : Oct 01, 2017
+// Last Update : Jul 13, 2023
 //============================================================================
 
 #include "ibex.h"
@@ -18,6 +18,45 @@
 
 using namespace std;
 using namespace ibex;
+
+int count_symbol_occurrences(const Function& function, const ExprSymbol& symbol) {
+    // Start with a count of 0.
+    int count = 0;
+
+    // Use a stack or queue to traverse the ExprNode tree.
+    std::queue<const ExprNode*> nodes;
+    nodes.push(&function.expr());
+
+    while (!nodes.empty()) {
+        const ExprNode* node = nodes.front();
+        nodes.pop();
+
+        // Check if the node is an ExprSymbol and if it matches the target symbol.
+        if (typeid(*node) == typeid(ExprSymbol) && 
+            strcmp(static_cast<const ExprSymbol*>(node)->name, symbol.name)==0) {
+            count++;
+        }
+
+        // Add the children of the node to the stack or queue.
+		const ExprNAryOp* nary_node=dynamic_cast<const ExprNAryOp*>(node);
+		const ExprBinaryOp* binary_node=dynamic_cast<const ExprBinaryOp*>(node);
+		const ExprUnaryOp* unary_node=dynamic_cast<const ExprUnaryOp*>(node);
+
+		if (nary_node) {
+        	for (int i = 0; i < nary_node->nb_args; i++) {
+            	nodes.push(&nary_node->args[i]);
+        	}
+		}else if(unary_node){
+			nodes.push(&unary_node->expr);
+		}else if(binary_node){
+			nodes.push(&binary_node->left);
+			nodes.push(&binary_node->right);
+		}
+    }
+
+    // Return the count.
+    return count;
+}
 
 int main(int argc, char** argv) {
 
@@ -47,6 +86,9 @@ int main(int argc, char** argv) {
 			"description of the manifold with boxes in the COV (binary) format. See --format", {'o',"output"});
 	args::Flag format(parser, "format", "Give a description of the COV format used by IbexSolve", {"format"});
 	args::Flag bfs(parser, "bfs", "Perform breadth-first search (instead of depth-first search, by default)", {"bfs"});
+	args::ValueFlag<string> _test_type(parser, "trad", "Existence test (no-test|M-test|M*-test|Lazy-M*-test)", {"test_type"});
+	args::Flag acid(parser, "phull", "Acid", {"acid"});
+	args::Flag phull(parser, "phull", "PolytopeHull", {"phull"});
 	args::Flag trace(parser, "trace", "Activate trace. \"Solutions\" (output boxes) are displayed as and when they are found.", {"trace"});
 	args::Flag stop_at_first(parser, "stop-a-first", "Stop at first solution/boundary/unknown box found.", {"stop-at-first"});
 	args::ValueFlag<string> boundary_test_arg(parser, "true|full-rank|half-ball|false", "Boundary test strength. Possible values are:\n"
@@ -61,6 +103,7 @@ int main(int argc, char** argv) {
 	args::ValueFlag<string> forced_params(parser, "vars","Force some variables to be parameters in the parametric proofs, separated by '+'. Example: --forced-params=x+y",{"forced-params"});
 	args::ValueFlag<string> no_split_arg(parser, "vars","Prevent some variables to be bisected, separated by '+'.\nExample: --no-split=x+y",{"no-split"});
 	args::Positional<std::string> filename(parser, "filename", "The name of the MINIBEX file.");
+	args::Positional<std::string> deriv_filename(parser, "filename", "The name of the MINIBEX file (partial derivatives).");
 
 	try
 	{
@@ -103,7 +146,9 @@ int main(int argc, char** argv) {
 
 		if (!quiet) {
 			cout << endl << "***************************** setup *****************************" << endl;
-			cout << "  file loaded:\t\t" << filename.Get() << endl;
+			cout << "  file loaded (system):\t\t" << filename.Get() << endl;
+
+			cout << "  file loaded (partial deriv.):\t" << filename.Get() << endl;
 
 			if (eps_x_min_arg)
 				cout << "  eps-x:\t\t" << eps_x_min_arg.Get() << "\t(precision on variables domain)" << endl;
@@ -120,10 +165,21 @@ int main(int argc, char** argv) {
 
 			if (stop_at_first)
 				cout << "  stop at first box found" << endl;
+
+			if (_test_type)
+				cout << "  Existence Test:\t" << _test_type.Get() << endl ;
 		}
 
-		// Load a system of equations
+		//original system
 		System sys(filename.Get().c_str(), simpl_level? simpl_level.Get() : ExprNode::default_simpl_level);
+		System deriv_sys(deriv_filename.Get().c_str(), simpl_level? simpl_level.Get() : ExprNode::default_simpl_level);
+
+		vector<vector<int>> occs(sys.nb_ctr);
+		for (int j=0; j<sys.nb_ctr; j++) {
+			for (int i=0; i<sys.args.size(); i++) {
+				occs[j].push_back(count_symbol_occurrences (sys.f_ctrs[j], sys.args[i]));
+			}
+		}
 
 		string output_manifold_file; // manifold output file
 		bool overwitten=false;       // is it overwritten?
@@ -191,11 +247,36 @@ int main(int argc, char** argv) {
 		}
 
 		// Build the default solver
-		DefaultSolver s(sys,
+		CtcExistenceTest::Test_type test_type;
+
+		if(_test_type){
+			if(_test_type.Get() == "no-test") test_type=CtcExistenceTest::NONE;
+			//else if(_test_type.Get()  == "tay") test_type=CtcExistenceTest::TAY;
+			//else if(_test_type.Get()  == "han") test_type=CtcExistenceTest::HAN;
+			//else if(_test_type.Get()  == "M*_lazy") test_type=CtcExistenceTest::REVMONO_LAZY;
+			else if(_test_type.Get()  == "M*-test") test_type=CtcExistenceTest::REVMONO_TAY;
+			else if(_test_type.Get()  == "Lazy-M*-test") test_type=CtcExistenceTest::REVMONO_TAY_LAZY;
+			else if(_test_type.Get()  == "M-test") test_type=CtcExistenceTest::FASTMONO_TAY;
+			else{
+				cerr << "\nError: \"" << _test_type << "\" is not a valid option (try --help)\n";
+				exit(0);
+			}
+		}
+
+		DefaultSolver s(sys, deriv_sys, occs,
 				eps_x_min,
 				eps_x_max ? eps_x_max.Get() : DefaultSolver::default_eps_x_max,
-				!bfs,
+				!bfs, test_type, acid, phull,
 				random_seed? random_seed.Get() : DefaultSolver::default_random_seed);
+
+		IntervalVector box(sys.nb_var);
+		//(0,1) box
+		/*for (int i=0; i<sys.nb_var; i++) {
+			box[i]=Interval(0.04,0.1);
+		}**/
+
+		//dynamic_cast<Solver*>(& s)->ctc.contract(box);
+		//exit(0);
 
 		if (boundary_test_arg) {
 
@@ -276,11 +357,11 @@ int main(int argc, char** argv) {
 
 		s.get_data().save(output_manifold_file.c_str());
 
-		if (!quiet) {
+		/*if (!quiet) {
 			cout << " results written in " << output_manifold_file << "\n";
 			if (overwitten)
 				cout << " (old file saved in " << manifold_copy << ")\n";
-		}
+		}*/
 		//		if (!quiet && !sols) {
 //			cout << " (note: use --sols to display solutions)" << endl;
 //		}

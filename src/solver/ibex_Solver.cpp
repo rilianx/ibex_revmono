@@ -79,6 +79,7 @@ Solver::~Solver() {
 }
 
 void Solver::start(const IntervalVector& init_box) {
+	
 
 	buffer.flush();
 
@@ -165,7 +166,7 @@ void Solver::start(const char* input_paving) {
 }
 
 bool Solver::next(CovSolverData::BoxStatus& status, const IntervalVector** sol) {
-
+	
 	while (!buffer.empty()) {
 
 		if (time_limit >0) {
@@ -192,7 +193,9 @@ bool Solver::next(CovSolverData::BoxStatus& status, const IntervalVector** sol) 
 		}
 
 		try {
+			
 			ctc.contract(c->box,context);
+			
 
 			if (c->box.is_empty()) throw EmptyBoxException();
 
@@ -562,6 +565,8 @@ void Solver::report() {
 	if (manif->nb_cells()!=nb_cells)
 		cout << " [total=" << manif->nb_cells() << "]";
 	cout << endl << endl;
+
+	cout << manif->time() << " " << manif->nb_cells() << endl;
 }
 
 } // end namespace ibex

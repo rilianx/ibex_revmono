@@ -15,6 +15,7 @@
 #include "ibex_System.h"
 #include "ibex_CellBuffer.h"
 #include "ibex_CtcCompo.h"
+#include "ibex_CtcExistenceTest.h"
 #include "ibex_Memory.h"
 
 namespace ibex {
@@ -34,7 +35,7 @@ public:
 	 * \param eps_x_max - Criterion for forcing bisection  (absolute precision)
 	 * \param dfs       - true: depth-first search. false: breadth-first search
 	 */
-    DefaultSolver(const System& sys, double eps_x_min=default_eps_x_min, double eps_x_max=default_eps_x_max, bool dfs=true, double random_seed=default_random_seed);
+    DefaultSolver(const System& sys, const System& deriv_sys, vector<vector<int>>& occs, double eps_x_min=default_eps_x_min, double eps_x_max=default_eps_x_max, bool dfs=true, CtcExistenceTest::Test_type test_type=CtcExistenceTest::NONE, bool acid=false, bool phull=false, double random_seed=default_random_seed);
 
     /**
 	 * \brief Create a default solver.
@@ -45,7 +46,7 @@ public:
 	 * \param eps_x_max - Criterion for forcing bisection  (absolute precision)
 	 * \param dfs       - true: depth-first search. false: breadth-first search
 	 */
-    DefaultSolver(const System& sys, const Vector& eps_x_min, double eps_x_max=default_eps_x_max, bool dfs=true, double random_seed=default_random_seed);
+    DefaultSolver(const System& sys, const System& deriv_sys, vector<vector<int>>& occs, const Vector& eps_x_min, double eps_x_max=default_eps_x_max, bool dfs=true, CtcExistenceTest::Test_type test_type=CtcExistenceTest::NONE, bool acid=false, bool phull=false, double random_seed=default_random_seed);
 
 	/**
 	 * \brief Default minimal width: 1e-6.
@@ -73,7 +74,7 @@ private:
 	/**
 	 * The contractor: hc4 + acid(hc4) + newton (if the system is square) + xnewton
 	 */
-	Ctc* ctc(const System& sys, double prec);
+	Ctc* ctc(const System& sys, const System& deriv_sys, vector<vector<int>>& occs, double prec, CtcExistenceTest::Test_type test_type, bool acid=false, bool phull=false);
 
 //	std::vector<CtcXNewton::corner_point>* default_corners ();
 

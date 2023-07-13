@@ -1,0 +1,7 @@
+algos:MONO_NEW_LAZY_HAN MONO_NEW_HAN 
+gains (average relative times):1.000000 0.819959 
+gains (total time)            :1.000000 0.858620 
+compared instances: 15  15 
+runs    : 19  19 
+L:  0   7 
+W:  0   0 

@@ -13,6 +13,7 @@
 
 #include "ibex_OptimizerConfig.h"
 #include "ibex_CovOptimData.h"
+#include<queue>
 
 namespace ibex {
 
@@ -140,6 +141,9 @@ public:
 	 */
 	Status optimize(const char* cov_file, double obj_init_bound=POS_INFINITY);
 
+
+	 double simulation(System& sys, System& nsys, std::queue<int> path, bool until_end=true);
+
 	/* =========================== Output ============================= */
 
 	/**
@@ -217,6 +221,7 @@ public:
 	 * \brief Get all optimization data.
 	 */
 	const CovOptimData& get_data() const;
+
 
 	/* =========================== Settings ============================= */
 
@@ -314,11 +319,15 @@ public:
 	 */
 	bool anticipated_upper_bounding; // TODO: should be set in OptimizerConfig
 
-protected:
 	/*
 	 * \brief Initialize the optimizer from a single box.
 	 */
 	void start(const IntervalVector& init_box, double obj_init_bound=POS_INFINITY);
+	
+	/** The current loup. */
+	double loup;
+
+protected:
 
 	/*
 	 * \brief Initialize the optimizer from a COV input file.
@@ -425,8 +434,7 @@ private:
 	/** Lower bound of the small boxes taken by the precision. */
 	double uplo_of_epsboxes;
 
-	/** The current loup. */
-	double loup;
+
 
 	/**
 	 * The point satisfying the constraints corresponding to the loup.

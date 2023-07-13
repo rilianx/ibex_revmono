@@ -100,11 +100,19 @@ double Optimizer::compute_ymax() {
 		return loup;
 }
 
+double last_found = 0.0;
 bool Optimizer::update_loup(const IntervalVector& box, BoxProperties& prop) {
 
-	try {
 
-		pair<IntervalVector,double> p=loup_finder.find(box,loup_point,loup,prop);
+
+	try {
+		last_found = POS_INFINITY;
+		pair<IntervalVector,double> p=loup_finder.find(box,loup_point,POS_INFINITY,prop);
+		last_found = p.second;
+
+
+		if(p.second>loup) throw LoupFinder::NotFound();
+
 		loup_point = p.first;
 		loup = p.second;
 
@@ -143,10 +151,10 @@ void Optimizer::update_uplo() {
 
 	if (! buffer.empty()) {
 		new_uplo= buffer.minimum();
-		if (new_uplo > loup && uplo_of_epsboxes > loup) {
+		/*if (new_uplo > loup && uplo_of_epsboxes > loup) {
 			cout << " loup = " << loup << " new_uplo=" << new_uplo <<  " uplo_of_epsboxes=" << uplo_of_epsboxes << endl;
 			ibex_error("optimizer: new_uplo>loup (please report bug)");
-		}
+		}*/
 		if (new_uplo < uplo) {
 			cout << "uplo= " << uplo << " new_uplo=" << new_uplo << endl;
 			ibex_error("optimizer: new_uplo<uplo (please report bug)");
@@ -235,6 +243,7 @@ void Optimizer::contract_and_bound(Cell& c) {
 	}
 
 	ctc.contract(c.box, context);
+
 	//cout << c.prop << endl;
 	if (c.box.is_empty()) return;
 
@@ -410,6 +419,124 @@ void Optimizer::start(const CovOptimData& data, double obj_init_bound) {
 	cov = new CovOptimData(extended_COV? n+1 : n, extended_COV);
 	cov->data->_optim_time = data.time();
 	cov->data->_optim_nb_cells = data.nb_cells();
+}
+
+double Optimizer::simulation(System& sys, System& nsys, std::queue<int> path, bool untilend){
+	update_uplo();
+	Cell *c = buffer.top();
+	contract_and_bound(*c);
+	if (c->box.is_empty()) return loup;
+
+	
+	double UB0 = last_found;
+	double LB0 = c->box[n].lb();
+	buffer.pop();
+	int d=0, depth=0;
+	double lb = POS_INFINITY;
+
+	bool first=true;
+	while (true){
+		int ptop=-1;
+		if (path.size()>0) ptop=path.front();
+		
+		pair<Cell*,Cell*> new_cells=bsc.bisect(*c);
+		Cell* c1=new_cells.first;
+		Cell* c2=new_cells.second;
+
+		
+		Vector pt = c1->box.mid();
+		double ev1 = nsys.goal_ub(pt);
+		double err1 = sys.f_ctrs.eval_vector(pt).mid()*sys.f_ctrs.eval_vector(pt).mid();
+		pt = c2->box.mid();
+		double ev2 = nsys.goal_ub(pt);
+		double err2 = sys.f_ctrs.eval_vector(pt).mid()*sys.f_ctrs.eval_vector(pt).mid();
+
+		double loup0 = loup;
+		contract_and_bound(*c1); //update loup
+		double ub0 = last_found;
+		double loup1 = loup;
+		loup=loup0;
+		contract_and_bound(*c2); //update loup
+		double ub1 = last_found;
+		if(loup1<loup) loup=loup1;
+		if(loup<loup0) depth=d;
+
+		if (c1->box.is_empty() && c2->box.is_empty() && !untilend){
+			double lb0 = POS_INFINITY, lb1=POS_INFINITY;
+			double ubb0 = POS_INFINITY, ubb1=POS_INFINITY;
+			cout << c->box << endl;
+			cout << ":" << lb0 << ":" << ub0 << ":" << lb1 << ":" << ub1 << ":" << LB0 << ":" << UB0 << ":" << loup << 
+			":" << ev1 << ":" << ev2 << ":" << err1 << ":" << err2 << ":" << ubb0 << ":" << ubb1 << endl; 
+			delete c;
+			delete c1; delete c2; return loup;
+		}
+
+		if (c1->box.is_empty() && c2->box.is_empty()){if (first==false) cout << "] }" << endl; delete c1; delete c2; return loup;}
+		else if (c1->box.is_empty()) { c=c2; delete c1;}
+		else if (c2->box.is_empty()) { c=c1; delete c2;}
+		else{
+
+			if(!untilend && path.size()==0) { 
+				double lb0 = POS_INFINITY, lb1=POS_INFINITY;
+				double ubb0 = POS_INFINITY, ubb1=POS_INFINITY;
+				if (!c1->box.is_empty()) lb0 = c1->box[n].lb();
+				if (!c2->box.is_empty()) lb1 = c2->box[n].lb();
+				if (!c1->box.is_empty()) ubb0 = c1->box[n].ub();
+				if (!c2->box.is_empty()) ubb1 = c2->box[n].ub();
+
+				cout << c->box << endl;
+				cout << ":" << lb0 << ":" << ub0 << ":" << lb1 << ":" << ub1 << ":" << LB0 << ":" << UB0 << ":" << loup << 
+				":" << ev1 << ":" << ev2 << ":" << err1 << ":" << err2  << ":" << ubb0 << ":" << ubb1 << endl; 
+				delete c;
+				delete c1; delete c2; return loup;
+			}
+
+			if(first){
+				cout << "{ \"left\": [";
+				for(int i=0;i<n;i++){
+					if (i>0) cout << ",";
+					cout << "[" << c1->box[i].lb() << "," << c1->box[i].ub() << "]";
+				}
+				cout << "], " << "\"l_lb\": "  << c1->box[n].lb() << ", " ;
+
+				cout << "\"right\": [";
+				for(int i=0;i<n;i++){
+					if (i>0) cout << ",";
+					cout << "[" << c2->box[i].lb() << "," << c2->box[i].ub() << "]";
+				}
+				cout << "], " << "\"r_lb\": "  << c2->box[n].lb() << ", " ;
+
+				if (UB0 == POS_INFINITY) UB0=1e20;
+				cout << "\"path\": [[" << c->depth << "," <<c->box[n].lb()  << "," << c->box[n].ub() << "," << UB0 << "]";
+				first = false;
+
+			}
+
+			double ub;
+			if (c1->box[n].lb()<=c2->box[n].lb() && (ptop==0 || ptop==-1)){  
+				//cout << 0 << "+"; d++;
+				c=c1; delete c2; 
+	
+				if (path.size()>0){
+					lb=c1->box[n].lb();
+				    path.pop();
+				}
+				ub = ub0;
+			}else{ 
+				//cout << 1 << "+"; d++;
+				c=c2; delete c1; 
+				if (path.size()>0){
+					lb=c2->box[n].lb();
+					path.pop();
+				}
+				ub=ub1;
+			}
+			if (ub == POS_INFINITY) ub=1e20;
+			loup = ub;
+			cout << ",[" << c->depth << "," <<c->box[n].lb()  << "," << c->box[n].ub() << "," << ub << "]";
+		}
+	}
+
 }
 
 Optimizer::Status Optimizer::optimize() {

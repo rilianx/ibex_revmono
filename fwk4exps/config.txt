@@ -1,0 +1,70 @@
+[base]
+test_instances = instances.txt
+mintime = 0.0001
+maxtime = 1000
+factors = 1 0.833 0.665 0.5 0.2 0.1
+sig_gain = 1.2
+max_seeds = 1
+min_seeds = 1
+algo_names = MONO_NEW_LAZY_HAN MONO_NEW_HAN
+
+
+[MONO_FAST_HAN]
+exec = "../bin/ibexsolve"
+params = _INSTANCE -t 15000 --test_type=MONO_FAST_HAN
+outputpos_times = 0
+outputpos_boxes = 1
+
+[MONO_NEW_LAZY_HAN]
+exec = "../bin/ibexsolve"
+params = _INSTANCE -t 15000 --test_type=MONO_NEW_LAZY_HAN
+outputpos_times = 0
+outputpos_boxes = 1
+
+[HAN]
+exec = "../bin/ibexsolve"
+params = _INSTANCE -t 15000 --test_type=HAN
+outputpos_times = 0
+outputpos_boxes = 1
+
+[TAY]
+exec = "../bin/ibexsolve"
+params = _INSTANCE -t 15000 --test_type=TAY
+outputpos_times = 0
+outputpos_boxes = 1
+
+[NONE_]
+exec = "../bin/ibexsolve"
+params = _INSTANCE -t 15000 --test_type=NONE
+outputpos_times = 0
+outputpos_boxes = 1
+
+[MONO_FAST]
+exec = "../bin/ibexsolve"
+params = _INSTANCE -t 15000 --test_type=MONO_FAST
+outputpos_times = 0
+outputpos_boxes = 1
+
+[MONO_TRAD1]
+exec = "../bin/ibexsolve"
+params = _INSTANCE -t 15000 --test_type=MONO_TRAD
+outputpos_times = 0
+outputpos_boxes = 1
+
+[MONO_NEW1]
+exec = "../bin/ibexsolve"
+params = _INSTANCE -t 15000 --test_type=MONO_NEW
+outputpos_times = 0
+outputpos_boxes = 1
+
+[MONO_NEW_LAZY]
+exec = "../bin/ibexsolve"
+params = _INSTANCE -t 15000 --test_type=MONO_NEW_LAZY
+outputpos_times = 0
+outputpos_boxes = 1
+
+[MONO_NEW_HAN]
+exec = "../bin/ibexsolve"
+params = _INSTANCE -t 15000 --test_type=MONO_NEW_HAN
+outputpos_times = 0
+outputpos_boxes = 1

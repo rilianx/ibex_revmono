@@ -1,0 +1,4 @@
+variables
+x[2] in [0,1];
+minimize
+-(x[0]+x[1]^2)

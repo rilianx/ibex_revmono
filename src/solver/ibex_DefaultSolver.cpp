@@ -12,6 +12,7 @@
 
 #include "ibex_LinearizerXTaylor.h"
 #include "ibex_SmearFunction.h"
+#include "ibex_CtcExistenceTest.h"
 #include "ibex_CtcHC4.h"
 #include "ibex_CtcAcid.h"
 #include "ibex_CtcNewton.h"
@@ -67,18 +68,30 @@ System* get_square_eq_sys(Memory& memory, const System& sys) {
 	return x;
 }*/
 
-Ctc* DefaultSolver::ctc (const System& sys, double prec) {
+Ctc* DefaultSolver::ctc (const System& sys, const System& deriv_sys, vector<vector<int>>& occs, double prec, CtcExistenceTest::Test_type test_type, bool acid, bool phull) {
 
 	if (sys.nb_ctr==0) return new CtcIdentity(sys.nb_var);
 
-	Array<Ctc> ctc_list(4); // 4 is the maximum of sub contractors
+	Array<Ctc> ctc_list(5); // 5 is the maximum of sub contractors
 
 	int index=0;
+
+	// zero contractor : non incremental hc4
+	ctc_list.set_ref(index++, rec(new CtcExistenceTest (sys, deriv_sys, occs, test_type, 0.95, 1e-5)));
 
 	// first contractor : non incremental hc4
 	ctc_list.set_ref(index++, rec(new CtcHC4 (sys.ctrs,0.01)));
 	// second contractor : acid (hc4)
-	ctc_list.set_ref(index++, rec(new CtcAcid (sys, rec(new CtcHC4 (sys.ctrs,0.1,true)))));
+
+	
+	//ctc_list.set_ref(index++, rec(new CtcAcid (sys, rec(new CtcHC4 (sys.ctrs,0.1,true)))));
+	
+	if (acid){
+		ctc_list.set_ref(index++, rec(new CtcCompo( 
+			rec(new CtcExistenceTest (sys, deriv_sys, occs, test_type, 0.95, 1e-5)),
+			rec(new CtcAcid (sys, rec(new CtcHC4 (sys.ctrs,0.1,true))))
+			)));
+	}
 
 	// if the system is a square system of equations, the third contractor is Newton
 	System* eqs=get_square_eq_sys(*this, sys);
@@ -87,7 +100,7 @@ Ctc* DefaultSolver::ctc (const System& sys, double prec) {
 	}
 
 	//System& norm_sys=rec(new NormalizedSystem(sys));
-	if (strcmp(_IBEX_LP_LIB_,"NONE")!=0)
+	if (strcmp(_IBEX_LP_LIB_,"NONE")!=0 && phull)
 		ctc_list.set_ref(index++,rec(new CtcFixPoint(rec(new CtcCompo(
 				rec(new CtcPolytopeHull(rec(new LinearizerXTaylor(sys)))),
 				rec(new CtcHC4 (sys.ctrs,0.01)))))));
@@ -98,8 +111,8 @@ Ctc* DefaultSolver::ctc (const System& sys, double prec) {
 	return new CtcCompo (ctc_list);
 }
 
-DefaultSolver::DefaultSolver(const System& sys, double eps_x_min, double eps_x_max,
-		bool dfs, double random_seed) : Solver(sys, rec(ctc(sys,eps_x_min)),
+DefaultSolver::DefaultSolver(const System& sys, const System& deriv_sys, vector<vector<int>>& occs, double eps_x_min, double eps_x_max,
+		bool dfs, CtcExistenceTest::Test_type test_type, bool acid, bool phull, double random_seed) : Solver(sys, rec(ctc(sys,deriv_sys,occs,eps_x_min,test_type,acid,phull)),
 		get_square_eq_sys(*this, sys)!=NULL?
 				(Bsc&) rec(new SmearSumRelative(*get_square_eq_sys(*this, sys), eps_x_min)) :
 				(Bsc&) rec(new RoundRobin(eps_x_min)),
@@ -112,8 +125,8 @@ DefaultSolver::DefaultSolver(const System& sys, double eps_x_min, double eps_x_m
 }
 
 // Note: we set the precision for Newton to the minimum of the precisions.
-DefaultSolver::DefaultSolver(const System& sys, const Vector& eps_x_min, double eps_x_max,
-		bool dfs, double random_seed) : Solver(sys, rec(ctc(sys,eps_x_min.min())),
+DefaultSolver::DefaultSolver(const System& sys, const System& deriv_sys, vector<vector<int>>& occs, const Vector& eps_x_min, double eps_x_max,
+		bool dfs, CtcExistenceTest::Test_type test_type, bool acid, bool phull, double random_seed) : Solver(sys, rec(ctc(sys,deriv_sys,occs,eps_x_min.min(),test_type, acid, phull)),
 		get_square_eq_sys(*this, sys)!=NULL?
 				(Bsc&) rec(new SmearSumRelative(*get_square_eq_sys(*this, sys), eps_x_min)) :
 				(Bsc&) rec(new RoundRobin(eps_x_min)),

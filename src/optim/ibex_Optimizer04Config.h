@@ -29,6 +29,8 @@ public:
 
 	/** The system */
 	System *sys;
+	NormalizedSystem *norm_sys;
+	ExtendedSystem *ext_sys;
 
 protected:
 
@@ -51,8 +53,7 @@ protected:
 	// ============================================================================
 
 
-	NormalizedSystem *norm_sys;
-	ExtendedSystem *ext_sys;
+
 	std::string filename;
 	std::string filtering;
 	std::string linearrelaxation;

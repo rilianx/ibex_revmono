@@ -50,6 +50,8 @@ target_sources (ibex PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}/ibex_CtcQuantif.h
   ${CMAKE_CURRENT_SOURCE_DIR}/ibex_CtcUnion.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/ibex_CtcUnion.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/ibex_CtcExistenceTest.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ibex_CtcExistenceTest.h
   )
 
 target_include_directories (ibex PUBLIC

@@ -1,0 +1,25 @@
+solved instances in standard strategy times
+mintime:0.000100
+<0.10 [0.10,0.20] [0.20,0.50] [0.50,0.67] [0.67,0.83] [0.83,1.00] [1.00,1.20] [1.20,1.50] [1.50,2.00] [2.00,5.00] [5.00,10.00] >10.00 
+MONO_NEW_HAN   0   0   0   2   7  13   2   0   0   0   0   0 
+MONO_NEW_HAN 
+1.000000 2/13 
+1.200480 0/7 
+1.503759 0/2 
+2.000000 0/0 
+5.000000 0/0 
+10.000000 0/0 
+
+
+instances with significative gains (1.2)
+../benchs/solver/deriv_systems/Brent-8.bch ../benchs/solver/deriv_systems/Brent-8.bch.der  7 nan 11 42485 
+../benchs/solver/deriv_systems/Caprasse.bch ../benchs/solver/deriv_systems/Caprasse.bch.der 1 6547 1 5881 
+../benchs/solver/deriv_systems/Design.bch ../benchs/solver/deriv_systems/Design.bch.der 55 167741 67 166343 
+../benchs/solver/deriv_systems/Ex14-2-3.bch ../benchs/solver/deriv_systems/Ex14-2-3.bch.der 38 nan 53 297377 
+../benchs/solver/deriv_systems/I5.bch ../benchs/solver/deriv_systems/I5.bch.der 28 nan 48 90429 
+../benchs/solver/deriv_systems/Katsura-12.bch ../benchs/solver/deriv_systems/Katsura-12.bch.der 10 8387 13 8385 
+../benchs/solver/deriv_systems/Trigexp2-9.bch ../benchs/solver/deriv_systems/Trigexp2-9.bch.der 85 nan 166 322369 
+
+gains
+0.000100 1.000000 15 0.819959 15 
+total time: 1.000000 0.858620 

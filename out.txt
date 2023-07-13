@@ -1,0 +1,999 @@
+make[2]: Warning: File 'src/solver/ibex_DefaultSolver.h' has modification time 45 s in the future
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Warning: File 'src/solver/ibex_DefaultSolver.h' has modification time 41 s in the future
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Warning: File 'src/bin/ibexsolve.cpp' has modification time 89 s in the future
+/home/iaraya/ibex2020/src/bin/ibexsolve.cpp:204:18: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+                        if(_test_type == "NONE") test_type=CtcExistenceTest::NONE;
+                                      ^  ~~~~~~
+/home/iaraya/ibex2020/src/bin/ibexsolve.cpp:204:18: error: invalid operands to binary expression ('args::Flag' and 'const char *')
+                        if(_test_type == "NONE") test_type=CtcExistenceTest::NONE;
+                           ~~~~~~~~~~ ^  ~~~~~~
+/home/iaraya/ibex2020/interval_lib_wrapper/gaol/gaol-4.2.0/gaol/gaol_interval.h:848:13: note: candidate function not viable: no known conversion from 'args::Flag' to 'const gaol::interval' for 1st argument
+INLINE bool operator==(const interval &I1, const interval &I2)
+            ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:292:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_code' for 1st argument
+  operator==(const error_code& __lhs, const error_code& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:297:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_code' for 1st argument
+  operator==(const error_code& __lhs, const error_condition& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:304:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_condition' for 1st argument
+  operator==(const error_condition& __lhs, const error_code& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:311:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_condition' for 1st argument
+  operator==(const error_condition& __lhs,
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:982:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'std::monostate' for 1st argument
+  _VARIANT_RELATION_FUNCTION_TEMPLATE(==, equal)
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:977:18: note: expanded from macro '_VARIANT_RELATION_FUNCTION_TEMPLATE'
+  constexpr bool operator __OP(monostate, monostate) noexcept \
+                 ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_pair.h:448:5: note: candidate template ignored: could not match 'pair<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:302:5: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const reverse_iterator<_Iterator>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:340:5: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const reverse_iterator<_IteratorL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:1115:5: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const move_iterator<_IteratorL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:1121:5: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const move_iterator<_Iterator>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/postypes.h:216:5: note: candidate template ignored: could not match 'fpos<type-parameter-0-0>' against 'args::Flag'
+    operator==(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/allocator.h:146:5: note: candidate template ignored: could not match 'allocator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const allocator<_T1>&, const allocator<_T2>&)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/allocator.h:152:5: note: candidate template ignored: could not match 'allocator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const allocator<_Tp>&, const allocator<_Tp>&)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:436:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(basic_string_view<_CharT, _Traits> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:442:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(basic_string_view<_CharT, _Traits> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:448:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'const char *'
+    operator==(__detail::__idt<basic_string_view<_CharT, _Traits>> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6048:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6056:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, char_traits<type-parameter-0-0>, allocator<type-parameter-0-0> >' against 'args::Flag'
+    operator==(const basic_string<_CharT>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6070:5: note: candidate template ignored: could not match 'const _CharT *' against 'args::Flag'
+    operator==(const _CharT* __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6082:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/streambuf_iterator.h:203:5: note: candidate template ignored: could not match 'istreambuf_iterator<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const istreambuf_iterator<_CharT, _Traits>& __a,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/array:252:5: note: candidate template ignored: could not match 'array<type-parameter-0-0, _Nm>' against 'args::Flag'
+    operator==(const array<_Tp, _Nm>& __one, const array<_Tp, _Nm>& __two)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/tuple:1413:5: note: candidate template ignored: could not match 'tuple<type-parameter-0-0...>' against 'args::Flag'
+    operator==(const tuple<_TElements...>& __t,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:693:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const unique_ptr<_Tp, _Dp>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:699:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const unique_ptr<_Tp, _Dp>& __x, nullptr_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:704:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'char const[5]'
+    operator==(nullptr_t, const unique_ptr<_Tp, _Dp>& __x) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_vector.h:1753:5: note: candidate template ignored: could not match 'vector<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/std_function.h:745:5: note: candidate template ignored: could not match 'function<type-parameter-0-0 (type-parameter-0-1...)>' against 'args::Flag'
+    operator==(const function<_Res(_Args...)>& __f, nullptr_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/std_function.h:751:5: note: candidate template ignored: could not match 'function<type-parameter-0-0 (type-parameter-0-1...)>' against 'char const[5]'
+    operator==(nullptr_t, const function<_Res(_Args...)>& __f) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1279:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, const optional<_Up>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1330:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, nullopt_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1335:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'char const[5]'
+    operator==(nullopt_t, const optional<_Tp>& __rhs) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1391:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, const _Up& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1397:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'char const[5]'
+    operator==(const _Up& __lhs, const optional<_Tp>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_map.h:1126:2: note: candidate template ignored: could not match 'unordered_map<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+        operator==(const unordered_map<_Key1, _Tp1, _Hash1, _Pred1, _Alloc1>&,
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_map.h:2069:5: note: candidate template ignored: could not match 'unordered_multimap<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+    operator==(const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:268:5: note: candidate template ignored: could not match '_Deque_iterator<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:275:5: note: candidate template ignored: could not match '_Deque_iterator<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:2277:5: note: candidate template ignored: could not match 'deque<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const deque<_Tp, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_stack.h:113:2: note: candidate template ignored: could not match 'stack<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+        operator==(const stack<_Tp1, _Seq1>&, const stack<_Tp1, _Seq1>&);
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_list.h:344:5: note: candidate template ignored: could not match '_List_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const _List_iterator<_Val>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_list.h:1987:5: note: candidate template ignored: could not match 'list<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_tree.h:406:5: note: candidate template ignored: could not match '_Rb_tree_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const _Rb_tree_iterator<_Val>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_tree.h:1556:5: note: candidate template ignored: could not match '_Rb_tree<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+    operator==(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_set.h:903:2: note: candidate template ignored: could not match 'set<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+        operator==(const set<_K1, _C1, _A1>&, const set<_K1, _C1, _A1>&);
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_multiset.h:943:5: note: candidate template ignored: could not match 'multiset<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const multiset<_Key, _Compare, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:982:3: note: candidate template ignored: could not match 'variant<type-parameter-0-0...>' against 'args::Flag'
+  _VARIANT_RELATION_FUNCTION_TEMPLATE(==, equal)
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:971:20: note: expanded from macro '_VARIANT_RELATION_FUNCTION_TEMPLATE'
+    constexpr bool operator __OP(const variant<_Types...>& __lhs, \
+                   ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_queue.h:330:5: note: candidate template ignored: could not match 'queue<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const queue<_Tp, _Seq>& __x, const queue<_Tp, _Seq>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_set.h:804:9: note: candidate template ignored: could not match 'unordered_set<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3>' against 'args::Flag'
+        operator==(const unordered_set<_Value1, _Hash1, _Pred1, _Alloc1>&,
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_set.h:1681:5: note: candidate template ignored: could not match 'unordered_multiset<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3>' against 'args::Flag'
+    operator==(const unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
+    ^
+/home/iaraya/ibex2020/src/bin/ibexsolve.cpp:205:23: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+                        else if(_test_type == "TAY") test_type=CtcExistenceTest::TAY;
+                                           ^  ~~~~~
+/home/iaraya/ibex2020/src/bin/ibexsolve.cpp:205:23: error: invalid operands to binary expression ('args::Flag' and 'const char *')
+                        else if(_test_type == "TAY") test_type=CtcExistenceTest::TAY;
+                                ~~~~~~~~~~ ^  ~~~~~
+/home/iaraya/ibex2020/interval_lib_wrapper/gaol/gaol-4.2.0/gaol/gaol_interval.h:848:13: note: candidate function not viable: no known conversion from 'args::Flag' to 'const gaol::interval' for 1st argument
+INLINE bool operator==(const interval &I1, const interval &I2)
+            ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:292:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_code' for 1st argument
+  operator==(const error_code& __lhs, const error_code& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:297:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_code' for 1st argument
+  operator==(const error_code& __lhs, const error_condition& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:304:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_condition' for 1st argument
+  operator==(const error_condition& __lhs, const error_code& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:311:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_condition' for 1st argument
+  operator==(const error_condition& __lhs,
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:982:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'std::monostate' for 1st argument
+  _VARIANT_RELATION_FUNCTION_TEMPLATE(==, equal)
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:977:18: note: expanded from macro '_VARIANT_RELATION_FUNCTION_TEMPLATE'
+  constexpr bool operator __OP(monostate, monostate) noexcept \
+                 ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_pair.h:448:5: note: candidate template ignored: could not match 'pair<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:302:5: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const reverse_iterator<_Iterator>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:340:5: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const reverse_iterator<_IteratorL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:1115:5: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const move_iterator<_IteratorL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:1121:5: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const move_iterator<_Iterator>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/postypes.h:216:5: note: candidate template ignored: could not match 'fpos<type-parameter-0-0>' against 'args::Flag'
+    operator==(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/allocator.h:146:5: note: candidate template ignored: could not match 'allocator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const allocator<_T1>&, const allocator<_T2>&)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/allocator.h:152:5: note: candidate template ignored: could not match 'allocator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const allocator<_Tp>&, const allocator<_Tp>&)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:436:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(basic_string_view<_CharT, _Traits> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:442:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(basic_string_view<_CharT, _Traits> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:448:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'const char *'
+    operator==(__detail::__idt<basic_string_view<_CharT, _Traits>> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6048:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6056:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, char_traits<type-parameter-0-0>, allocator<type-parameter-0-0> >' against 'args::Flag'
+    operator==(const basic_string<_CharT>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6070:5: note: candidate template ignored: could not match 'const _CharT *' against 'args::Flag'
+    operator==(const _CharT* __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6082:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/streambuf_iterator.h:203:5: note: candidate template ignored: could not match 'istreambuf_iterator<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const istreambuf_iterator<_CharT, _Traits>& __a,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/array:252:5: note: candidate template ignored: could not match 'array<type-parameter-0-0, _Nm>' against 'args::Flag'
+    operator==(const array<_Tp, _Nm>& __one, const array<_Tp, _Nm>& __two)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/tuple:1413:5: note: candidate template ignored: could not match 'tuple<type-parameter-0-0...>' against 'args::Flag'
+    operator==(const tuple<_TElements...>& __t,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:693:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const unique_ptr<_Tp, _Dp>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:699:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const unique_ptr<_Tp, _Dp>& __x, nullptr_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:704:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'char const[4]'
+    operator==(nullptr_t, const unique_ptr<_Tp, _Dp>& __x) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_vector.h:1753:5: note: candidate template ignored: could not match 'vector<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/std_function.h:745:5: note: candidate template ignored: could not match 'function<type-parameter-0-0 (type-parameter-0-1...)>' against 'args::Flag'
+    operator==(const function<_Res(_Args...)>& __f, nullptr_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/std_function.h:751:5: note: candidate template ignored: could not match 'function<type-parameter-0-0 (type-parameter-0-1...)>' against 'char const[4]'
+    operator==(nullptr_t, const function<_Res(_Args...)>& __f) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1279:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, const optional<_Up>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1330:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, nullopt_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1335:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'char const[4]'
+    operator==(nullopt_t, const optional<_Tp>& __rhs) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1391:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, const _Up& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1397:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'char const[4]'
+    operator==(const _Up& __lhs, const optional<_Tp>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_map.h:1126:2: note: candidate template ignored: could not match 'unordered_map<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+        operator==(const unordered_map<_Key1, _Tp1, _Hash1, _Pred1, _Alloc1>&,
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_map.h:2069:5: note: candidate template ignored: could not match 'unordered_multimap<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+    operator==(const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:268:5: note: candidate template ignored: could not match '_Deque_iterator<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:275:5: note: candidate template ignored: could not match '_Deque_iterator<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:2277:5: note: candidate template ignored: could not match 'deque<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const deque<_Tp, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_stack.h:113:2: note: candidate template ignored: could not match 'stack<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+        operator==(const stack<_Tp1, _Seq1>&, const stack<_Tp1, _Seq1>&);
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_list.h:344:5: note: candidate template ignored: could not match '_List_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const _List_iterator<_Val>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_list.h:1987:5: note: candidate template ignored: could not match 'list<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_tree.h:406:5: note: candidate template ignored: could not match '_Rb_tree_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const _Rb_tree_iterator<_Val>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_tree.h:1556:5: note: candidate template ignored: could not match '_Rb_tree<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+    operator==(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_set.h:903:2: note: candidate template ignored: could not match 'set<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+        operator==(const set<_K1, _C1, _A1>&, const set<_K1, _C1, _A1>&);
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_multiset.h:943:5: note: candidate template ignored: could not match 'multiset<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const multiset<_Key, _Compare, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:982:3: note: candidate template ignored: could not match 'variant<type-parameter-0-0...>' against 'args::Flag'
+  _VARIANT_RELATION_FUNCTION_TEMPLATE(==, equal)
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:971:20: note: expanded from macro '_VARIANT_RELATION_FUNCTION_TEMPLATE'
+    constexpr bool operator __OP(const variant<_Types...>& __lhs, \
+                   ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_queue.h:330:5: note: candidate template ignored: could not match 'queue<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const queue<_Tp, _Seq>& __x, const queue<_Tp, _Seq>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_set.h:804:9: note: candidate template ignored: could not match 'unordered_set<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3>' against 'args::Flag'
+        operator==(const unordered_set<_Value1, _Hash1, _Pred1, _Alloc1>&,
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_set.h:1681:5: note: candidate template ignored: could not match 'unordered_multiset<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3>' against 'args::Flag'
+    operator==(const unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
+    ^
+/home/iaraya/ibex2020/src/bin/ibexsolve.cpp:206:23: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+                        else if(_test_type == "HAN") test_type=CtcExistenceTest::HAN;
+                                           ^  ~~~~~
+/home/iaraya/ibex2020/src/bin/ibexsolve.cpp:206:23: error: invalid operands to binary expression ('args::Flag' and 'const char *')
+                        else if(_test_type == "HAN") test_type=CtcExistenceTest::HAN;
+                                ~~~~~~~~~~ ^  ~~~~~
+/home/iaraya/ibex2020/interval_lib_wrapper/gaol/gaol-4.2.0/gaol/gaol_interval.h:848:13: note: candidate function not viable: no known conversion from 'args::Flag' to 'const gaol::interval' for 1st argument
+INLINE bool operator==(const interval &I1, const interval &I2)
+            ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:292:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_code' for 1st argument
+  operator==(const error_code& __lhs, const error_code& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:297:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_code' for 1st argument
+  operator==(const error_code& __lhs, const error_condition& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:304:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_condition' for 1st argument
+  operator==(const error_condition& __lhs, const error_code& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:311:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_condition' for 1st argument
+  operator==(const error_condition& __lhs,
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:982:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'std::monostate' for 1st argument
+  _VARIANT_RELATION_FUNCTION_TEMPLATE(==, equal)
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:977:18: note: expanded from macro '_VARIANT_RELATION_FUNCTION_TEMPLATE'
+  constexpr bool operator __OP(monostate, monostate) noexcept \
+                 ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_pair.h:448:5: note: candidate template ignored: could not match 'pair<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:302:5: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const reverse_iterator<_Iterator>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:340:5: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const reverse_iterator<_IteratorL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:1115:5: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const move_iterator<_IteratorL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:1121:5: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const move_iterator<_Iterator>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/postypes.h:216:5: note: candidate template ignored: could not match 'fpos<type-parameter-0-0>' against 'args::Flag'
+    operator==(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/allocator.h:146:5: note: candidate template ignored: could not match 'allocator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const allocator<_T1>&, const allocator<_T2>&)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/allocator.h:152:5: note: candidate template ignored: could not match 'allocator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const allocator<_Tp>&, const allocator<_Tp>&)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:436:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(basic_string_view<_CharT, _Traits> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:442:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(basic_string_view<_CharT, _Traits> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:448:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'const char *'
+    operator==(__detail::__idt<basic_string_view<_CharT, _Traits>> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6048:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6056:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, char_traits<type-parameter-0-0>, allocator<type-parameter-0-0> >' against 'args::Flag'
+    operator==(const basic_string<_CharT>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6070:5: note: candidate template ignored: could not match 'const _CharT *' against 'args::Flag'
+    operator==(const _CharT* __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6082:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/streambuf_iterator.h:203:5: note: candidate template ignored: could not match 'istreambuf_iterator<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const istreambuf_iterator<_CharT, _Traits>& __a,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/array:252:5: note: candidate template ignored: could not match 'array<type-parameter-0-0, _Nm>' against 'args::Flag'
+    operator==(const array<_Tp, _Nm>& __one, const array<_Tp, _Nm>& __two)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/tuple:1413:5: note: candidate template ignored: could not match 'tuple<type-parameter-0-0...>' against 'args::Flag'
+    operator==(const tuple<_TElements...>& __t,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:693:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const unique_ptr<_Tp, _Dp>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:699:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const unique_ptr<_Tp, _Dp>& __x, nullptr_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:704:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'char const[4]'
+    operator==(nullptr_t, const unique_ptr<_Tp, _Dp>& __x) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_vector.h:1753:5: note: candidate template ignored: could not match 'vector<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/std_function.h:745:5: note: candidate template ignored: could not match 'function<type-parameter-0-0 (type-parameter-0-1...)>' against 'args::Flag'
+    operator==(const function<_Res(_Args...)>& __f, nullptr_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/std_function.h:751:5: note: candidate template ignored: could not match 'function<type-parameter-0-0 (type-parameter-0-1...)>' against 'char const[4]'
+    operator==(nullptr_t, const function<_Res(_Args...)>& __f) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1279:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, const optional<_Up>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1330:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, nullopt_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1335:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'char const[4]'
+    operator==(nullopt_t, const optional<_Tp>& __rhs) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1391:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, const _Up& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1397:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'char const[4]'
+    operator==(const _Up& __lhs, const optional<_Tp>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_map.h:1126:2: note: candidate template ignored: could not match 'unordered_map<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+        operator==(const unordered_map<_Key1, _Tp1, _Hash1, _Pred1, _Alloc1>&,
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_map.h:2069:5: note: candidate template ignored: could not match 'unordered_multimap<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+    operator==(const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:268:5: note: candidate template ignored: could not match '_Deque_iterator<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:275:5: note: candidate template ignored: could not match '_Deque_iterator<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:2277:5: note: candidate template ignored: could not match 'deque<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const deque<_Tp, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_stack.h:113:2: note: candidate template ignored: could not match 'stack<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+        operator==(const stack<_Tp1, _Seq1>&, const stack<_Tp1, _Seq1>&);
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_list.h:344:5: note: candidate template ignored: could not match '_List_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const _List_iterator<_Val>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_list.h:1987:5: note: candidate template ignored: could not match 'list<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_tree.h:406:5: note: candidate template ignored: could not match '_Rb_tree_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const _Rb_tree_iterator<_Val>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_tree.h:1556:5: note: candidate template ignored: could not match '_Rb_tree<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+    operator==(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_set.h:903:2: note: candidate template ignored: could not match 'set<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+        operator==(const set<_K1, _C1, _A1>&, const set<_K1, _C1, _A1>&);
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_multiset.h:943:5: note: candidate template ignored: could not match 'multiset<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const multiset<_Key, _Compare, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:982:3: note: candidate template ignored: could not match 'variant<type-parameter-0-0...>' against 'args::Flag'
+  _VARIANT_RELATION_FUNCTION_TEMPLATE(==, equal)
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:971:20: note: expanded from macro '_VARIANT_RELATION_FUNCTION_TEMPLATE'
+    constexpr bool operator __OP(const variant<_Types...>& __lhs, \
+                   ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_queue.h:330:5: note: candidate template ignored: could not match 'queue<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const queue<_Tp, _Seq>& __x, const queue<_Tp, _Seq>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_set.h:804:9: note: candidate template ignored: could not match 'unordered_set<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3>' against 'args::Flag'
+        operator==(const unordered_set<_Value1, _Hash1, _Pred1, _Alloc1>&,
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_set.h:1681:5: note: candidate template ignored: could not match 'unordered_multiset<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3>' against 'args::Flag'
+    operator==(const unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
+    ^
+/home/iaraya/ibex2020/src/bin/ibexsolve.cpp:207:23: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+                        else if(_test_type == "MONO_TRAD") test_type=CtcExistenceTest::MONO_TRAD;
+                                           ^  ~~~~~~~~~~~
+/home/iaraya/ibex2020/src/bin/ibexsolve.cpp:207:23: error: invalid operands to binary expression ('args::Flag' and 'const char *')
+                        else if(_test_type == "MONO_TRAD") test_type=CtcExistenceTest::MONO_TRAD;
+                                ~~~~~~~~~~ ^  ~~~~~~~~~~~
+/home/iaraya/ibex2020/interval_lib_wrapper/gaol/gaol-4.2.0/gaol/gaol_interval.h:848:13: note: candidate function not viable: no known conversion from 'args::Flag' to 'const gaol::interval' for 1st argument
+INLINE bool operator==(const interval &I1, const interval &I2)
+            ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:292:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_code' for 1st argument
+  operator==(const error_code& __lhs, const error_code& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:297:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_code' for 1st argument
+  operator==(const error_code& __lhs, const error_condition& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:304:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_condition' for 1st argument
+  operator==(const error_condition& __lhs, const error_code& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:311:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_condition' for 1st argument
+  operator==(const error_condition& __lhs,
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:982:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'std::monostate' for 1st argument
+  _VARIANT_RELATION_FUNCTION_TEMPLATE(==, equal)
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:977:18: note: expanded from macro '_VARIANT_RELATION_FUNCTION_TEMPLATE'
+  constexpr bool operator __OP(monostate, monostate) noexcept \
+                 ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_pair.h:448:5: note: candidate template ignored: could not match 'pair<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:302:5: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const reverse_iterator<_Iterator>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:340:5: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const reverse_iterator<_IteratorL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:1115:5: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const move_iterator<_IteratorL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:1121:5: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const move_iterator<_Iterator>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/postypes.h:216:5: note: candidate template ignored: could not match 'fpos<type-parameter-0-0>' against 'args::Flag'
+    operator==(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/allocator.h:146:5: note: candidate template ignored: could not match 'allocator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const allocator<_T1>&, const allocator<_T2>&)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/allocator.h:152:5: note: candidate template ignored: could not match 'allocator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const allocator<_Tp>&, const allocator<_Tp>&)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:436:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(basic_string_view<_CharT, _Traits> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:442:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(basic_string_view<_CharT, _Traits> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:448:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'const char *'
+    operator==(__detail::__idt<basic_string_view<_CharT, _Traits>> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6048:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6056:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, char_traits<type-parameter-0-0>, allocator<type-parameter-0-0> >' against 'args::Flag'
+    operator==(const basic_string<_CharT>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6070:5: note: candidate template ignored: could not match 'const _CharT *' against 'args::Flag'
+    operator==(const _CharT* __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6082:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/streambuf_iterator.h:203:5: note: candidate template ignored: could not match 'istreambuf_iterator<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const istreambuf_iterator<_CharT, _Traits>& __a,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/array:252:5: note: candidate template ignored: could not match 'array<type-parameter-0-0, _Nm>' against 'args::Flag'
+    operator==(const array<_Tp, _Nm>& __one, const array<_Tp, _Nm>& __two)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/tuple:1413:5: note: candidate template ignored: could not match 'tuple<type-parameter-0-0...>' against 'args::Flag'
+    operator==(const tuple<_TElements...>& __t,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:693:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const unique_ptr<_Tp, _Dp>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:699:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const unique_ptr<_Tp, _Dp>& __x, nullptr_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:704:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'char const[10]'
+    operator==(nullptr_t, const unique_ptr<_Tp, _Dp>& __x) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_vector.h:1753:5: note: candidate template ignored: could not match 'vector<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/std_function.h:745:5: note: candidate template ignored: could not match 'function<type-parameter-0-0 (type-parameter-0-1...)>' against 'args::Flag'
+    operator==(const function<_Res(_Args...)>& __f, nullptr_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/std_function.h:751:5: note: candidate template ignored: could not match 'function<type-parameter-0-0 (type-parameter-0-1...)>' against 'char const[10]'
+    operator==(nullptr_t, const function<_Res(_Args...)>& __f) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1279:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, const optional<_Up>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1330:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, nullopt_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1335:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'char const[10]'
+    operator==(nullopt_t, const optional<_Tp>& __rhs) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1391:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, const _Up& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1397:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'char const[10]'
+    operator==(const _Up& __lhs, const optional<_Tp>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_map.h:1126:2: note: candidate template ignored: could not match 'unordered_map<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+        operator==(const unordered_map<_Key1, _Tp1, _Hash1, _Pred1, _Alloc1>&,
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_map.h:2069:5: note: candidate template ignored: could not match 'unordered_multimap<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+    operator==(const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:268:5: note: candidate template ignored: could not match '_Deque_iterator<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:275:5: note: candidate template ignored: could not match '_Deque_iterator<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:2277:5: note: candidate template ignored: could not match 'deque<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const deque<_Tp, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_stack.h:113:2: note: candidate template ignored: could not match 'stack<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+        operator==(const stack<_Tp1, _Seq1>&, const stack<_Tp1, _Seq1>&);
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_list.h:344:5: note: candidate template ignored: could not match '_List_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const _List_iterator<_Val>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_list.h:1987:5: note: candidate template ignored: could not match 'list<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_tree.h:406:5: note: candidate template ignored: could not match '_Rb_tree_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const _Rb_tree_iterator<_Val>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_tree.h:1556:5: note: candidate template ignored: could not match '_Rb_tree<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+    operator==(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_set.h:903:2: note: candidate template ignored: could not match 'set<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+        operator==(const set<_K1, _C1, _A1>&, const set<_K1, _C1, _A1>&);
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_multiset.h:943:5: note: candidate template ignored: could not match 'multiset<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const multiset<_Key, _Compare, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:982:3: note: candidate template ignored: could not match 'variant<type-parameter-0-0...>' against 'args::Flag'
+  _VARIANT_RELATION_FUNCTION_TEMPLATE(==, equal)
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:971:20: note: expanded from macro '_VARIANT_RELATION_FUNCTION_TEMPLATE'
+    constexpr bool operator __OP(const variant<_Types...>& __lhs, \
+                   ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_queue.h:330:5: note: candidate template ignored: could not match 'queue<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const queue<_Tp, _Seq>& __x, const queue<_Tp, _Seq>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_set.h:804:9: note: candidate template ignored: could not match 'unordered_set<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3>' against 'args::Flag'
+        operator==(const unordered_set<_Value1, _Hash1, _Pred1, _Alloc1>&,
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_set.h:1681:5: note: candidate template ignored: could not match 'unordered_multiset<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3>' against 'args::Flag'
+    operator==(const unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
+    ^
+/home/iaraya/ibex2020/src/bin/ibexsolve.cpp:208:23: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+                        else if(_test_type == "OG") test_type=CtcExistenceTest::OG;
+                                           ^  ~~~~
+/home/iaraya/ibex2020/src/bin/ibexsolve.cpp:208:23: error: invalid operands to binary expression ('args::Flag' and 'const char *')
+                        else if(_test_type == "OG") test_type=CtcExistenceTest::OG;
+                                ~~~~~~~~~~ ^  ~~~~
+/home/iaraya/ibex2020/interval_lib_wrapper/gaol/gaol-4.2.0/gaol/gaol_interval.h:848:13: note: candidate function not viable: no known conversion from 'args::Flag' to 'const gaol::interval' for 1st argument
+INLINE bool operator==(const interval &I1, const interval &I2)
+            ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:292:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_code' for 1st argument
+  operator==(const error_code& __lhs, const error_code& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:297:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_code' for 1st argument
+  operator==(const error_code& __lhs, const error_condition& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:304:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_condition' for 1st argument
+  operator==(const error_condition& __lhs, const error_code& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:311:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_condition' for 1st argument
+  operator==(const error_condition& __lhs,
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:982:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'std::monostate' for 1st argument
+  _VARIANT_RELATION_FUNCTION_TEMPLATE(==, equal)
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:977:18: note: expanded from macro '_VARIANT_RELATION_FUNCTION_TEMPLATE'
+  constexpr bool operator __OP(monostate, monostate) noexcept \
+                 ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_pair.h:448:5: note: candidate template ignored: could not match 'pair<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:302:5: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const reverse_iterator<_Iterator>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:340:5: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const reverse_iterator<_IteratorL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:1115:5: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const move_iterator<_IteratorL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:1121:5: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const move_iterator<_Iterator>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/postypes.h:216:5: note: candidate template ignored: could not match 'fpos<type-parameter-0-0>' against 'args::Flag'
+    operator==(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/allocator.h:146:5: note: candidate template ignored: could not match 'allocator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const allocator<_T1>&, const allocator<_T2>&)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/allocator.h:152:5: note: candidate template ignored: could not match 'allocator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const allocator<_Tp>&, const allocator<_Tp>&)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:436:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(basic_string_view<_CharT, _Traits> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:442:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(basic_string_view<_CharT, _Traits> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:448:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'const char *'
+    operator==(__detail::__idt<basic_string_view<_CharT, _Traits>> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6048:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6056:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, char_traits<type-parameter-0-0>, allocator<type-parameter-0-0> >' against 'args::Flag'
+    operator==(const basic_string<_CharT>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6070:5: note: candidate template ignored: could not match 'const _CharT *' against 'args::Flag'
+    operator==(const _CharT* __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6082:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/streambuf_iterator.h:203:5: note: candidate template ignored: could not match 'istreambuf_iterator<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const istreambuf_iterator<_CharT, _Traits>& __a,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/array:252:5: note: candidate template ignored: could not match 'array<type-parameter-0-0, _Nm>' against 'args::Flag'
+    operator==(const array<_Tp, _Nm>& __one, const array<_Tp, _Nm>& __two)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/tuple:1413:5: note: candidate template ignored: could not match 'tuple<type-parameter-0-0...>' against 'args::Flag'
+    operator==(const tuple<_TElements...>& __t,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:693:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const unique_ptr<_Tp, _Dp>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:699:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const unique_ptr<_Tp, _Dp>& __x, nullptr_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:704:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'char const[3]'
+    operator==(nullptr_t, const unique_ptr<_Tp, _Dp>& __x) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_vector.h:1753:5: note: candidate template ignored: could not match 'vector<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/std_function.h:745:5: note: candidate template ignored: could not match 'function<type-parameter-0-0 (type-parameter-0-1...)>' against 'args::Flag'
+    operator==(const function<_Res(_Args...)>& __f, nullptr_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/std_function.h:751:5: note: candidate template ignored: could not match 'function<type-parameter-0-0 (type-parameter-0-1...)>' against 'char const[3]'
+    operator==(nullptr_t, const function<_Res(_Args...)>& __f) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1279:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, const optional<_Up>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1330:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, nullopt_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1335:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'char const[3]'
+    operator==(nullopt_t, const optional<_Tp>& __rhs) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1391:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, const _Up& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1397:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'char const[3]'
+    operator==(const _Up& __lhs, const optional<_Tp>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_map.h:1126:2: note: candidate template ignored: could not match 'unordered_map<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+        operator==(const unordered_map<_Key1, _Tp1, _Hash1, _Pred1, _Alloc1>&,
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_map.h:2069:5: note: candidate template ignored: could not match 'unordered_multimap<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+    operator==(const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:268:5: note: candidate template ignored: could not match '_Deque_iterator<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:275:5: note: candidate template ignored: could not match '_Deque_iterator<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:2277:5: note: candidate template ignored: could not match 'deque<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const deque<_Tp, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_stack.h:113:2: note: candidate template ignored: could not match 'stack<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+        operator==(const stack<_Tp1, _Seq1>&, const stack<_Tp1, _Seq1>&);
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_list.h:344:5: note: candidate template ignored: could not match '_List_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const _List_iterator<_Val>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_list.h:1987:5: note: candidate template ignored: could not match 'list<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_tree.h:406:5: note: candidate template ignored: could not match '_Rb_tree_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const _Rb_tree_iterator<_Val>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_tree.h:1556:5: note: candidate template ignored: could not match '_Rb_tree<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+    operator==(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_set.h:903:2: note: candidate template ignored: could not match 'set<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+        operator==(const set<_K1, _C1, _A1>&, const set<_K1, _C1, _A1>&);
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_multiset.h:943:5: note: candidate template ignored: could not match 'multiset<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const multiset<_Key, _Compare, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:982:3: note: candidate template ignored: could not match 'variant<type-parameter-0-0...>' against 'args::Flag'
+  _VARIANT_RELATION_FUNCTION_TEMPLATE(==, equal)
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:971:20: note: expanded from macro '_VARIANT_RELATION_FUNCTION_TEMPLATE'
+    constexpr bool operator __OP(const variant<_Types...>& __lhs, \
+                   ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_queue.h:330:5: note: candidate template ignored: could not match 'queue<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const queue<_Tp, _Seq>& __x, const queue<_Tp, _Seq>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_set.h:804:9: note: candidate template ignored: could not match 'unordered_set<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3>' against 'args::Flag'
+        operator==(const unordered_set<_Value1, _Hash1, _Pred1, _Alloc1>&,
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_set.h:1681:5: note: candidate template ignored: could not match 'unordered_multiset<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3>' against 'args::Flag'
+    operator==(const unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
+    ^
+/home/iaraya/ibex2020/src/bin/ibexsolve.cpp:209:23: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+                        else if(_test_type == "MONO_NEW") test_type=CtcExistenceTest::MONO_NEW;
+                                           ^  ~~~~~~~~~~
+/home/iaraya/ibex2020/src/bin/ibexsolve.cpp:209:23: error: invalid operands to binary expression ('args::Flag' and 'const char *')
+                        else if(_test_type == "MONO_NEW") test_type=CtcExistenceTest::MONO_NEW;
+                                ~~~~~~~~~~ ^  ~~~~~~~~~~
+/home/iaraya/ibex2020/interval_lib_wrapper/gaol/gaol-4.2.0/gaol/gaol_interval.h:848:13: note: candidate function not viable: no known conversion from 'args::Flag' to 'const gaol::interval' for 1st argument
+INLINE bool operator==(const interval &I1, const interval &I2)
+            ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:292:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_code' for 1st argument
+  operator==(const error_code& __lhs, const error_code& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:297:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_code' for 1st argument
+  operator==(const error_code& __lhs, const error_condition& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:304:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_condition' for 1st argument
+  operator==(const error_condition& __lhs, const error_code& __rhs) noexcept
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/system_error:311:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'const std::error_condition' for 1st argument
+  operator==(const error_condition& __lhs,
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:982:3: note: candidate function not viable: no known conversion from 'args::Flag' to 'std::monostate' for 1st argument
+  _VARIANT_RELATION_FUNCTION_TEMPLATE(==, equal)
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:977:18: note: expanded from macro '_VARIANT_RELATION_FUNCTION_TEMPLATE'
+  constexpr bool operator __OP(monostate, monostate) noexcept \
+                 ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_pair.h:448:5: note: candidate template ignored: could not match 'pair<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:302:5: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const reverse_iterator<_Iterator>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:340:5: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const reverse_iterator<_IteratorL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:1115:5: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const move_iterator<_IteratorL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_iterator.h:1121:5: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const move_iterator<_Iterator>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/postypes.h:216:5: note: candidate template ignored: could not match 'fpos<type-parameter-0-0>' against 'args::Flag'
+    operator==(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/allocator.h:146:5: note: candidate template ignored: could not match 'allocator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const allocator<_T1>&, const allocator<_T2>&)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/allocator.h:152:5: note: candidate template ignored: could not match 'allocator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const allocator<_Tp>&, const allocator<_Tp>&)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:436:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(basic_string_view<_CharT, _Traits> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:442:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(basic_string_view<_CharT, _Traits> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/string_view:448:5: note: candidate template ignored: could not match 'basic_string_view<type-parameter-0-0, type-parameter-0-1>' against 'const char *'
+    operator==(__detail::__idt<basic_string_view<_CharT, _Traits>> __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6048:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6056:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, char_traits<type-parameter-0-0>, allocator<type-parameter-0-0> >' against 'args::Flag'
+    operator==(const basic_string<_CharT>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6070:5: note: candidate template ignored: could not match 'const _CharT *' against 'args::Flag'
+    operator==(const _CharT* __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/basic_string.h:6082:5: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/streambuf_iterator.h:203:5: note: candidate template ignored: could not match 'istreambuf_iterator<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const istreambuf_iterator<_CharT, _Traits>& __a,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/array:252:5: note: candidate template ignored: could not match 'array<type-parameter-0-0, _Nm>' against 'args::Flag'
+    operator==(const array<_Tp, _Nm>& __one, const array<_Tp, _Nm>& __two)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/tuple:1413:5: note: candidate template ignored: could not match 'tuple<type-parameter-0-0...>' against 'args::Flag'
+    operator==(const tuple<_TElements...>& __t,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:693:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const unique_ptr<_Tp, _Dp>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:699:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const unique_ptr<_Tp, _Dp>& __x, nullptr_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unique_ptr.h:704:5: note: candidate template ignored: could not match 'unique_ptr<type-parameter-0-0, type-parameter-0-1>' against 'char const[9]'
+    operator==(nullptr_t, const unique_ptr<_Tp, _Dp>& __x) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_vector.h:1753:5: note: candidate template ignored: could not match 'vector<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/std_function.h:745:5: note: candidate template ignored: could not match 'function<type-parameter-0-0 (type-parameter-0-1...)>' against 'args::Flag'
+    operator==(const function<_Res(_Args...)>& __f, nullptr_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/std_function.h:751:5: note: candidate template ignored: could not match 'function<type-parameter-0-0 (type-parameter-0-1...)>' against 'char const[9]'
+    operator==(nullptr_t, const function<_Res(_Args...)>& __f) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1279:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, const optional<_Up>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1330:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, nullopt_t) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1335:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'char const[9]'
+    operator==(nullopt_t, const optional<_Tp>& __rhs) noexcept
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1391:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'args::Flag'
+    operator==(const optional<_Tp>& __lhs, const _Up& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/optional:1397:5: note: candidate template ignored: could not match 'optional<type-parameter-0-0>' against 'char const[9]'
+    operator==(const _Up& __lhs, const optional<_Tp>& __rhs)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_map.h:1126:2: note: candidate template ignored: could not match 'unordered_map<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+        operator==(const unordered_map<_Key1, _Tp1, _Hash1, _Pred1, _Alloc1>&,
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_map.h:2069:5: note: candidate template ignored: could not match 'unordered_multimap<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+    operator==(const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:268:5: note: candidate template ignored: could not match '_Deque_iterator<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:275:5: note: candidate template ignored: could not match '_Deque_iterator<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_deque.h:2277:5: note: candidate template ignored: could not match 'deque<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const deque<_Tp, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_stack.h:113:2: note: candidate template ignored: could not match 'stack<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+        operator==(const stack<_Tp1, _Seq1>&, const stack<_Tp1, _Seq1>&);
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_list.h:344:5: note: candidate template ignored: could not match '_List_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const _List_iterator<_Val>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_list.h:1987:5: note: candidate template ignored: could not match 'list<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_tree.h:406:5: note: candidate template ignored: could not match '_Rb_tree_iterator<type-parameter-0-0>' against 'args::Flag'
+    operator==(const _Rb_tree_iterator<_Val>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_tree.h:1556:5: note: candidate template ignored: could not match '_Rb_tree<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3, type-parameter-0-4>' against 'args::Flag'
+    operator==(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_set.h:903:2: note: candidate template ignored: could not match 'set<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+        operator==(const set<_K1, _C1, _A1>&, const set<_K1, _C1, _A1>&);
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_multiset.h:943:5: note: candidate template ignored: could not match 'multiset<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'args::Flag'
+    operator==(const multiset<_Key, _Compare, _Alloc>& __x,
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:982:3: note: candidate template ignored: could not match 'variant<type-parameter-0-0...>' against 'args::Flag'
+  _VARIANT_RELATION_FUNCTION_TEMPLATE(==, equal)
+  ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/variant:971:20: note: expanded from macro '_VARIANT_RELATION_FUNCTION_TEMPLATE'
+    constexpr bool operator __OP(const variant<_Types...>& __lhs, \
+                   ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/stl_queue.h:330:5: note: candidate template ignored: could not match 'queue<type-parameter-0-0, type-parameter-0-1>' against 'args::Flag'
+    operator==(const queue<_Tp, _Seq>& __x, const queue<_Tp, _Seq>& __y)
+    ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_set.h:804:9: note: candidate template ignored: could not match 'unordered_set<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3>' against 'args::Flag'
+        operator==(const unordered_set<_Value1, _Hash1, _Pred1, _Alloc1>&,
+        ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/bits/unordered_set.h:1681:5: note: candidate template ignored: could not match 'unordered_multiset<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2, type-parameter-0-3>' against 'args::Flag'
+    operator==(const unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
+    ^
+6 warnings and 6 errors generated.
+make[2]: *** [src/bin/CMakeFiles/ibexsolve.dir/ibexsolve.cpp.o] Error 1
+make[1]: *** [src/bin/CMakeFiles/ibexsolve.dir/all] Error 2
+make: *** [all] Error 2
